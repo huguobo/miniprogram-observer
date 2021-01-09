@@ -8,6 +8,7 @@ App({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    // defineReactive the global data
     this.observe(this.globalData);
   },
   Observe(data) {
@@ -43,6 +44,7 @@ App({
     userInfo: null
   },
   addWatcher(key, source, cb) {
+    // the method create watcher instance used in specific pages
     new Watcher(key, source, cb);
   }
 })
